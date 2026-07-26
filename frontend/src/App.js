@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Cambia esta URL por la de tu backend en Render cuando compiles para producción
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/users';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/users/';
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -28,7 +28,7 @@ function App() {
   };
 
   const eliminarUsuario = async (id) => {
-    await axios.delete(`${API_URL}/${id}`);
+    await axios.delete(`${API_URL}${id}`);
     cargarUsuarios();
   };
 
