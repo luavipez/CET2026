@@ -20,6 +20,6 @@ from usuarios.views import usuarios_list, usuario_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/users', usuarios_list),
+    path('', usuarios_list),
     path('api/users/<str:id>', usuario_detail),
 ]
